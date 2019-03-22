@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    <!-- туда ли я добавил? -->
+                    <!-- <ul class="dropdown-menu" role="menu"> -->
+                        <li>
+                            <a href="{{ route('list_drafts') }}">Drafts</a>
+                        </li>
+                    <!-- Конец туда ли я добавил? -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->

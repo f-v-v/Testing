@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Post;
-
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
+use App\Post;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -34,9 +34,11 @@ class AuthServiceProvider extends ServiceProvider
     public function registerPostPolicies()
     {
         Gate::define('create-post', function ($user) {
+            // echo 'я тут';
             return $user->hasAccess(['create-post']);
         });
         Gate::define('update-post', function ($user, Post $post) {
+            // echo 'я тут-'.$post;
             return $user->hasAccess(['update-post']) or $user->id == $post->user_id;
         });
         Gate::define('publish-post', function ($user) {

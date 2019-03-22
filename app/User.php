@@ -48,8 +48,8 @@ class User extends Authenticatable
     public function hasAccess(array $permissions) : bool
     {
         // check if the permission is available in any role
-        foreach ($this->roles() as $role) {
-            if ($role->hasAccsess($permissions)) {
+        foreach ($this->roles as $role) {
+            if ($role->hasAccess($permissions)) {
                 return true;
             }
         }

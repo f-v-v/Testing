@@ -36,10 +36,10 @@ Route::group(['prefix' => 'post'], function (){
         ->middleware('can:create-post');
     Route::get('/edit/{post}', 'PostController@edit')
         ->name('edit_post')
-        ->middleware('can:update-post, post');
+        ->middleware('can:update-post,post');
     Route::post('/edit/{post}','PostController@update')
         ->name('update_post')
-        ->middleware('can:update-post, post');
+        ->middleware('can:update-post,post');
     // using get to simplify
     Route::get('/publish/{post}', 'PostController@publish')
         ->name('publish_post')
